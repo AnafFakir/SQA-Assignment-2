@@ -1,3 +1,4 @@
+// Q3: Product search, quantity verification, and checkout flow
 import { test, expect } from '@playwright/test';
 import { ProductSearchPage } from '../pages/ProductSearchPage';
 

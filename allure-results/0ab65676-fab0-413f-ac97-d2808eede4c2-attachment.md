@@ -1,0 +1,537 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: product-search-checkout.spec.ts >> Q3 Product Search E2E
+- Location: tests\product-search-checkout.spec.ts:4:5
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('Build your own cheap computer', { exact: true })
+Expected: visible
+Error: strict mode violation: getByText('Build your own cheap computer', { exact: true }) resolved to 2 elements:
+    1) <a href="/build-your-cheap-own-computer">Build your own cheap computer</a> aka locator('#flyout-cart').getByText('Build your own cheap computer')
+    2) <a class="product-name" href="/build-your-cheap-own-computer">Build your own cheap computer</a> aka getByRole('link', { name: 'Build your own cheap computer' })
+
+Call log:
+  - Expect "toBeVisible" getByText('Build your own cheap computer', { exact: true }) with timeout 5000ms
+  - waiting for getByText('Build your own cheap computer', { exact: true })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f3e2]:
+  - generic [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link [ref=f3e6] [cursor=pointer]:
+        - /url: /
+        - img "Tricentis Demo Web Shop" [ref=f3e7]
+      - list [ref=f3e10]:
+        - listitem [ref=f3e11]:
+          - link "Register" [ref=f3e12] [cursor=pointer]:
+            - /url: /register
+        - listitem [ref=f3e13]:
+          - link "Log in" [ref=f3e14] [cursor=pointer]:
+            - /url: /login
+        - listitem [ref=f3e15]:
+          - link "Shopping cart (2)" [ref=f3e16] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=f3e17]: Shopping cart
+            - generic [ref=f3e18]: (2)
+        - listitem [ref=f3e19]:
+          - link "Wishlist (0)" [ref=f3e20] [cursor=pointer]:
+            - /url: /wishlist
+            - generic [ref=f3e21]: Wishlist
+            - generic [ref=f3e22]: (0)
+      - generic [ref=f3e24]:
+        - status [ref=f3e25]
+        - textbox [ref=f3e26]: Search store
+        - button "Search" [ref=f3e27] [cursor=pointer]
+    - list [ref=f3e29]:
+      - listitem [ref=f3e30]:
+        - link "Books" [ref=f3e31] [cursor=pointer]:
+          - /url: /books
+      - listitem [ref=f3e32]:
+        - link "Computers" [ref=f3e33] [cursor=pointer]:
+          - /url: /computers
+      - listitem [ref=f3e34]:
+        - link "Electronics" [ref=f3e35] [cursor=pointer]:
+          - /url: /electronics
+      - listitem [ref=f3e36]:
+        - link "Apparel & Shoes" [ref=f3e37] [cursor=pointer]:
+          - /url: /apparel-shoes
+      - listitem [ref=f3e38]:
+        - link "Digital downloads" [ref=f3e39] [cursor=pointer]:
+          - /url: /digital-downloads
+      - listitem [ref=f3e40]:
+        - link "Jewelry" [ref=f3e41] [cursor=pointer]:
+          - /url: /jewelry
+      - listitem [ref=f3e42]:
+        - link "Gift Cards" [ref=f3e43] [cursor=pointer]:
+          - /url: /gift-cards
+    - generic [ref=f3e45]:
+      - heading "Shopping cart" [level=1] [ref=f3e47]
+      - generic [ref=f3e50]:
+        - table [ref=f3e51]:
+          - rowgroup [ref=f3e59]:
+            - row [ref=f3e60]:
+              - columnheader "Remove" [ref=f3e61]
+              - columnheader [ref=f3e62]
+              - columnheader "Product(s)" [ref=f3e63]
+              - columnheader "Price" [ref=f3e64]
+              - columnheader "Qty." [ref=f3e65]
+              - columnheader "Total" [ref=f3e66]
+          - rowgroup [ref=f3e67]:
+            - row [ref=f3e68]:
+              - cell [ref=f3e69]:
+                - checkbox [ref=f3e70]
+              - cell [ref=f3e71]:
+                - img "Picture of Build your own cheap computer" [ref=f3e72]
+              - cell [ref=f3e73]:
+                - link "Build your own cheap computer" [ref=f3e74] [cursor=pointer]:
+                  - /url: /build-your-cheap-own-computer
+                - generic [ref=f3e75]: "Processor: Medium [+15.00]RAM: 2 GBHDD: 320 GB"
+                - link "Edit" [ref=f3e77] [cursor=pointer]:
+                  - /url: /build-your-cheap-own-computer?updatecartitemid=7114040
+              - cell "815.00" [ref=f3e78]
+              - cell [ref=f3e79]:
+                - textbox [ref=f3e80]: "2"
+              - cell "1630.00" [ref=f3e81]
+        - generic [ref=f3e83]:
+          - button "Update shopping cart" [ref=f3e84] [cursor=pointer]
+          - button "Continue shopping" [ref=f3e85] [cursor=pointer]
+        - generic [ref=f3e86]:
+          - generic [ref=f3e87]:
+            - generic [ref=f3e88]:
+              - generic [ref=f3e89]:
+                - strong [ref=f3e91]: Discount Code
+                - generic [ref=f3e92]: Enter your coupon here
+                - generic [ref=f3e93]:
+                  - textbox [ref=f3e94]
+                  - button "Apply coupon" [ref=f3e95] [cursor=pointer]
+              - generic [ref=f3e96]:
+                - strong [ref=f3e98]: Gift Cards
+                - generic [ref=f3e99]: Enter gift card code
+                - generic [ref=f3e100]:
+                  - textbox [ref=f3e101]
+                  - button "Add gift card" [ref=f3e102] [cursor=pointer]
+            - generic [ref=f3e104]:
+              - strong [ref=f3e106]: Estimate shipping
+              - generic [ref=f3e107]: Enter your destination to get a shipping estimate
+              - generic [ref=f3e108]:
+                - generic [ref=f3e109]:
+                  - generic [ref=f3e110]: "Country:"
+                  - combobox "Country:" [ref=f3e111]:
+                    - option "Select country" [selected]
+                    - option "United States"
+                    - option "Canada"
+                    - option "Afghanistan"
+                    - option "Albania"
+                    - option "Algeria"
+                    - option "American Samoa"
+                    - option "Andorra"
+                    - option "Angola"
+                    - option "Anguilla"
+                    - option "Antarctica"
+                    - option "Antigua and Barbuda"
+                    - option "Argentina"
+                    - option "Armenia"
+                    - option "Aruba"
+                    - option "Australia"
+                    - option "Austria"
+                    - option "Azerbaijan"
+                    - option "Bahamas"
+                    - option "Bahrain"
+                    - option "Bangladesh"
+                    - option "Barbados"
+                    - option "Belarus"
+                    - option "Belgium"
+                    - option "Belize"
+                    - option "Benin"
+                    - option "Bermuda"
+                    - option "Bhutan"
+                    - option "Bolivia"
+                    - option "Bosnia and Herzegowina"
+                    - option "Botswana"
+                    - option "Bouvet Island"
+                    - option "Brazil"
+                    - option "British Indian Ocean Territory"
+                    - option "Brunei Darussalam"
+                    - option "Bulgaria"
+                    - option "Burkina Faso"
+                    - option "Burundi"
+                    - option "Cambodia"
+                    - option "Cameroon"
+                    - option "Cape Verde"
+                    - option "Cayman Islands"
+                    - option "Central African Republic"
+                    - option "Chad"
+                    - option "Chile"
+                    - option "China"
+                    - option "Christmas Island"
+                    - option "Cocos (Keeling) Islands"
+                    - option "Colombia"
+                    - option "Comoros"
+                    - option "Congo"
+                    - option "Cook Islands"
+                    - option "Costa Rica"
+                    - option "Cote D'Ivoire"
+                    - option "Croatia"
+                    - option "Cuba"
+                    - option "Cyprus"
+                    - option "Czech Republic"
+                    - option "Denmark"
+                    - option "Djibouti"
+                    - option "Dominica"
+                    - option "Dominican Republic"
+                    - option "Ecuador"
+                    - option "Egypt"
+                    - option "El Salvador"
+                    - option "Equatorial Guinea"
+                    - option "Eritrea"
+                    - option "Estonia"
+                    - option "Ethiopia"
+                    - option "Falkland Islands (Malvinas)"
+                    - option "Faroe Islands"
+                    - option "Fiji"
+                    - option "Finland"
+                    - option "France"
+                    - option "French Guiana"
+                    - option "French Polynesia"
+                    - option "French Southern Territories"
+                    - option "Gabon"
+                    - option "Gambia"
+                    - option "Georgia"
+                    - option "Germany"
+                    - option "Ghana"
+                    - option "Gibraltar"
+                    - option "Greece"
+                    - option "Greenland"
+                    - option "Grenada"
+                    - option "Guadeloupe"
+                    - option "Guam"
+                    - option "Guatemala"
+                    - option "Guinea"
+                    - option "Guinea-bissau"
+                    - option "Guyana"
+                    - option "Haiti"
+                    - option "Heard and Mc Donald Islands"
+                    - option "Honduras"
+                    - option "Hong Kong"
+                    - option "Hungary"
+                    - option "Iceland"
+                    - option "India"
+                    - option "Indonesia"
+                    - option "Iran (Islamic Republic of)"
+                    - option "Iraq"
+                    - option "Ireland"
+                    - option "Israel"
+                    - option "Italy"
+                    - option "Jamaica"
+                    - option "Japan"
+                    - option "Jordan"
+                    - option "Kazakhstan"
+                    - option "Kenya"
+                    - option "Kiribati"
+                    - option "Korea"
+                    - option "Korea, Democratic People's Republic of"
+                    - option "Kuwait"
+                    - option "Kyrgyzstan"
+                    - option "Lao People's Democratic Republic"
+                    - option "Latvia"
+                    - option "Lebanon"
+                    - option "Lesotho"
+                    - option "Liberia"
+                    - option "Libyan Arab Jamahiriya"
+                    - option "Liechtenstein"
+                    - option "Lithuania"
+                    - option "Luxembourg"
+                    - option "Macau"
+                    - option "Macedonia"
+                    - option "Madagascar"
+                    - option "Malawi"
+                    - option "Malaysia"
+                    - option "Maldives"
+                    - option "Mali"
+                    - option "Malta"
+                    - option "Marshall Islands"
+                    - option "Martinique"
+                    - option "Mauritania"
+                    - option "Mauritius"
+                    - option "Mayotte"
+                    - option "Mexico"
+                    - option "Micronesia"
+                    - option "Moldova"
+                    - option "Monaco"
+                    - option "Mongolia"
+                    - option "Montenegro"
+                    - option "Montserrat"
+                    - option "Morocco"
+                    - option "Mozambique"
+                    - option "Myanmar"
+                    - option "Namibia"
+                    - option "Nauru"
+                    - option "Nepal"
+                    - option "Netherlands"
+                    - option "Netherlands Antilles"
+                    - option "New Caledonia"
+                    - option "New Zealand"
+                    - option "Nicaragua"
+                    - option "Niger"
+                    - option "Nigeria"
+                    - option "Niue"
+                    - option "Norfolk Island"
+                    - option "Northern Mariana Islands"
+                    - option "Norway"
+                    - option "Oman"
+                    - option "Pakistan"
+                    - option "Palau"
+                    - option "Panama"
+                    - option "Papua New Guinea"
+                    - option "Paraguay"
+                    - option "Peru"
+                    - option "Philippines"
+                    - option "Pitcairn"
+                    - option "Poland"
+                    - option "Portugal"
+                    - option "Puerto Rico"
+                    - option "Qatar"
+                    - option "Reunion"
+                    - option "Romania"
+                    - option "Russia"
+                    - option "Rwanda"
+                    - option "Saint Kitts and Nevis"
+                    - option "Saint Lucia"
+                    - option "Saint Vincent and the Grenadines"
+                    - option "Samoa"
+                    - option "San Marino"
+                    - option "Sao Tome and Principe"
+                    - option "Saudi Arabia"
+                    - option "Senegal"
+                    - option "Serbia"
+                    - option "Seychelles"
+                    - option "Sierra Leone"
+                    - option "Singapore"
+                    - option "Slovakia (Slovak Republic)"
+                    - option "Slovenia"
+                    - option "Solomon Islands"
+                    - option "Somalia"
+                    - option "South Africa"
+                    - option "South Georgia & South Sandwich Islands"
+                    - option "Spain"
+                    - option "Sri Lanka"
+                    - option "St. Helena"
+                    - option "St. Pierre and Miquelon"
+                    - option "Sudan"
+                    - option "Suriname"
+                    - option "Svalbard and Jan Mayen Islands"
+                    - option "Swaziland"
+                    - option "Sweden"
+                    - option "Switzerland"
+                    - option "Syrian Arab Republic"
+                    - option "Taiwan"
+                    - option "Tajikistan"
+                    - option "Tanzania"
+                    - option "Thailand"
+                    - option "Togo"
+                    - option "Tokelau"
+                    - option "Tonga"
+                    - option "Trinidad and Tobago"
+                    - option "Tunisia"
+                    - option "Turkey"
+                    - option "Turkmenistan"
+                    - option "Turks and Caicos Islands"
+                    - option "Tuvalu"
+                    - option "Uganda"
+                    - option "Ukraine"
+                    - option "United Arab Emirates"
+                    - option "United Kingdom"
+                    - option "United States minor outlying islands"
+                    - option "Uruguay"
+                    - option "Uzbekistan"
+                    - option "Vanuatu"
+                    - option "Vatican City State (Holy See)"
+                    - option "Venezuela"
+                    - option "Viet Nam"
+                    - option "Virgin Islands (British)"
+                    - option "Virgin Islands (U.S.)"
+                    - option "Wallis and Futuna Islands"
+                    - option "Western Sahara"
+                    - option "Yemen"
+                    - option "Zambia"
+                    - option "Zimbabwe"
+                  - text: "*"
+                - generic [ref=f3e112]:
+                  - generic [ref=f3e113]: "State / province:"
+                  - combobox "State / province:" [ref=f3e114]:
+                    - option "Other (Non US)" [selected]
+                - generic [ref=f3e115]:
+                  - generic [ref=f3e116]: "Zip / postal code:"
+                  - textbox "Zip / postal code:" [ref=f3e117]
+                - button "Estimate shipping" [ref=f3e119] [cursor=pointer]
+          - generic [ref=f3e120]:
+            - table [ref=f3e122]:
+              - rowgroup [ref=f3e123]:
+                - row [ref=f3e124]:
+                  - cell "Sub-Total:" [ref=f3e125]
+                  - cell "1630.00" [ref=f3e126]
+                - row [ref=f3e128]:
+                  - cell "Shipping:" [ref=f3e129]
+                  - cell "0.00" [ref=f3e130]
+                - row [ref=f3e132]:
+                  - cell "Tax:" [ref=f3e133]
+                  - cell "0.00" [ref=f3e134]
+                - row [ref=f3e136]:
+                  - cell "Total:" [ref=f3e137]
+                  - cell [ref=f3e138]:
+                    - strong [ref=f3e141]: "1630.00"
+            - generic [ref=f3e142]:
+              - checkbox [ref=f3e143]
+              - text: I agree with the terms of service and I adhere to them unconditionally (read)
+            - button "Checkout" [ref=f3e145] [cursor=pointer]
+  - generic [ref=f3e147]:
+    - generic [ref=f3e148]:
+      - generic [ref=f3e149]:
+        - heading "Information" [level=3] [ref=f3e150]
+        - list [ref=f3e151]:
+          - listitem [ref=f3e152]:
+            - link "Sitemap" [ref=f3e153] [cursor=pointer]:
+              - /url: /sitemap
+          - listitem [ref=f3e154]:
+            - link "Shipping & Returns" [ref=f3e155] [cursor=pointer]:
+              - /url: /shipping-returns
+          - listitem [ref=f3e156]:
+            - link "Privacy Notice" [ref=f3e157] [cursor=pointer]:
+              - /url: /privacy-policy
+          - listitem [ref=f3e158]:
+            - link "Conditions of Use" [ref=f3e159] [cursor=pointer]:
+              - /url: /conditions-of-use
+          - listitem [ref=f3e160]:
+            - link "About us" [ref=f3e161] [cursor=pointer]:
+              - /url: /about-us
+          - listitem [ref=f3e162]:
+            - link "Contact us" [ref=f3e163] [cursor=pointer]:
+              - /url: /contactus
+      - generic [ref=f3e164]:
+        - heading "Customer service" [level=3] [ref=f3e165]
+        - list [ref=f3e166]:
+          - listitem [ref=f3e167]:
+            - link "Search" [ref=f3e168] [cursor=pointer]:
+              - /url: /search
+          - listitem [ref=f3e169]:
+            - link "News" [ref=f3e170] [cursor=pointer]:
+              - /url: /news
+          - listitem [ref=f3e171]:
+            - link "Blog" [ref=f3e172] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f3e173]:
+            - link "Recently viewed products" [ref=f3e174] [cursor=pointer]:
+              - /url: /recentlyviewedproducts
+          - listitem [ref=f3e175]:
+            - link "Compare products list" [ref=f3e176] [cursor=pointer]:
+              - /url: /compareproducts
+          - listitem [ref=f3e177]:
+            - link "New products" [ref=f3e178] [cursor=pointer]:
+              - /url: /newproducts
+      - generic [ref=f3e179]:
+        - heading "My account" [level=3] [ref=f3e180]
+        - list [ref=f3e181]:
+          - listitem [ref=f3e182]:
+            - link "My account" [ref=f3e183] [cursor=pointer]:
+              - /url: /customer/info
+          - listitem [ref=f3e184]:
+            - link "Orders" [ref=f3e185] [cursor=pointer]:
+              - /url: /customer/orders
+          - listitem [ref=f3e186]:
+            - link "Addresses" [ref=f3e187] [cursor=pointer]:
+              - /url: /customer/addresses
+          - listitem [ref=f3e188]:
+            - link "Shopping cart" [ref=f3e189] [cursor=pointer]:
+              - /url: /cart
+          - listitem [ref=f3e190]:
+            - link "Wishlist" [ref=f3e191] [cursor=pointer]:
+              - /url: /wishlist
+      - generic [ref=f3e192]:
+        - heading "Follow us" [level=3] [ref=f3e193]
+        - list [ref=f3e194]:
+          - listitem [ref=f3e195]:
+            - link "Facebook" [ref=f3e196] [cursor=pointer]:
+              - /url: http://www.facebook.com/nopCommerce
+          - listitem [ref=f3e197]:
+            - link "Twitter" [ref=f3e198] [cursor=pointer]:
+              - /url: https://twitter.com/nopCommerce
+          - listitem [ref=f3e199]:
+            - link "RSS" [ref=f3e200] [cursor=pointer]:
+              - /url: /news/rss/1
+          - listitem [ref=f3e201]:
+            - link "YouTube" [ref=f3e202] [cursor=pointer]:
+              - /url: http://www.youtube.com/user/nopCommerce
+          - listitem [ref=f3e203]:
+            - link "Google+" [ref=f3e204] [cursor=pointer]:
+              - /url: https://plus.google.com/+nopcommerce
+    - generic [ref=f3e205]:
+      - text: Powered by
+      - link "nopCommerce" [ref=f3e206] [cursor=pointer]:
+        - /url: http://www.nopcommerce.com/
+    - generic [ref=f3e207]: Copyright © 2026 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { ProductSearchPage } from '../pages/ProductSearchPage';
+  3  | 
+  4  | test('Q3 Product Search E2E', async ({ page }) => {
+  5  | 
+  6  |   const productPage = new ProductSearchPage(page);
+  7  | 
+  8  |   // 1. Open Demo Web Shop
+  9  |   await productPage.openHomePage();
+  10 | 
+  11 |   // 2. Search for computer
+  12 |   await productPage.searchProduct('computer');
+  13 | 
+  14 |   // 3. Verify search page
+  15 |   await expect(page).toHaveURL(/search/);
+  16 | 
+  17 |   // 4. Open Build your own cheap computer
+  18 |   await page.getByRole('link', {
+  19 |     name: 'Build your own cheap computer',
+  20 |     exact: true
+  21 |   }).click();
+  22 | 
+  23 |   // 5. Set quantity to 2
+  24 |   await productPage.increaseQuantity('2');
+  25 | 
+  26 |   // 6. Add product to cart
+  27 |   await productPage.addToCart();
+  28 | 
+  29 |   // 7. Open Shopping Cart
+  30 |   await page.locator('a.ico-cart').first().click();
+  31 | 
+  32 |   // 8. Verify Shopping Cart page
+  33 |   await expect(page).toHaveURL(/cart/);
+  34 | 
+  35 |   // 9. Verify product is in cart
+  36 |   await expect(
+  37 |     page.getByText('Build your own cheap computer', { exact: true })
+> 38 |   ).toBeVisible();
+     |     ^ Error: expect(locator).toBeVisible() failed
+  39 | 
+  40 |   // 10. Verify quantity is 2
+  41 |   await expect(
+  42 |     page.locator('input.qty-input')
+  43 |   ).toHaveValue('2');
+  44 | 
+  45 | });
+```

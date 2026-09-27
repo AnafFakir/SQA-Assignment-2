@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5038","Invalid Login","webkit","2026-09-27","passed","2026-09-27","","invalid-login.spec.ts","",""
+"","6275","Invalid Login","chromium","2026-09-27","passed","2026-09-27","","invalid-login.spec.ts","",""
+"","9829","Register + Add Product to Cart","chromium","2026-09-27","passed","2026-09-27","","register-add-cart.spec.ts","",""
+"","15915","Register + Add Product to Cart","webkit","2026-09-27","passed","2026-09-27","","register-add-cart.spec.ts","",""
+"","11879","Register + Add Product to Cart","firefox","2026-09-27","passed","2026-09-27","","register-add-cart.spec.ts","",""
+"","6111","Invalid Login","firefox","2026-09-27","passed","2026-09-27","","invalid-login.spec.ts","",""

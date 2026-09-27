@@ -1,0 +1,430 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: register-add-cart.spec.ts >> Register + Add Product to Cart
+- Location: tests\register-add-cart.spec.ts:5:5
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: getByRole('link', { name: /Shopping cart/ }) resolved to 2 elements:
+    1) <a href="/cart" class="ico-cart">…</a> aka getByRole('link', { name: 'Shopping cart (1)' })
+    2) <a href="/cart" class="ico-cart">Shopping cart</a> aka getByRole('link', { name: 'Shopping cart', exact: true })
+
+Call log:
+  - waiting for getByRole('link', { name: /Shopping cart/ })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - generic "Close" [ref=f6e3] [cursor=pointer]
+    - paragraph [ref=f6e4]:
+      - text: The product has been added to your
+      - link "shopping cart" [ref=f6e5] [cursor=pointer]:
+        - /url: /cart
+  - generic [ref=f6e6]:
+    - generic [ref=f6e7]:
+      - generic [ref=f6e8]:
+        - link [ref=f6e10] [cursor=pointer]:
+          - /url: /
+          - img "Tricentis Demo Web Shop" [ref=f6e11]
+        - list [ref=f6e14]:
+          - listitem [ref=f6e15]:
+            - link "testuser1790492750951@example.com" [ref=f6e16] [cursor=pointer]:
+              - /url: /customer/info
+          - listitem [ref=f6e17]:
+            - link "Log out" [ref=f6e18] [cursor=pointer]:
+              - /url: /logout
+          - listitem [ref=f6e19]:
+            - link "Shopping cart (1)" [ref=f6e20] [cursor=pointer]:
+              - /url: /cart
+              - generic [ref=f6e21]: Shopping cart
+              - generic [ref=f6e22]: (1)
+          - listitem [ref=f6e23]:
+            - link "Wishlist (0)" [ref=f6e24] [cursor=pointer]:
+              - /url: /wishlist
+              - generic [ref=f6e25]: Wishlist
+              - generic [ref=f6e26]: (0)
+        - generic [ref=f6e28]:
+          - status [ref=f6e29]
+          - textbox [ref=f6e30]: Search store
+          - button "Search" [ref=f6e31] [cursor=pointer]
+      - list [ref=f6e33]:
+        - listitem [ref=f6e34]:
+          - link "Books" [ref=f6e35] [cursor=pointer]:
+            - /url: /books
+        - listitem [ref=f6e36]:
+          - link "Computers" [ref=f6e37] [cursor=pointer]:
+            - /url: /computers
+        - listitem [ref=f6e38]:
+          - link "Electronics" [ref=f6e39] [cursor=pointer]:
+            - /url: /electronics
+        - listitem [ref=f6e40]:
+          - link "Apparel & Shoes" [ref=f6e41] [cursor=pointer]:
+            - /url: /apparel-shoes
+        - listitem [ref=f6e42]:
+          - link "Digital downloads" [ref=f6e43] [cursor=pointer]:
+            - /url: /digital-downloads
+        - listitem [ref=f6e44]:
+          - link "Jewelry" [ref=f6e45] [cursor=pointer]:
+            - /url: /jewelry
+        - listitem [ref=f6e46]:
+          - link "Gift Cards" [ref=f6e47] [cursor=pointer]:
+            - /url: /gift-cards
+      - generic:
+        - generic [ref=f6e48]:
+          - generic [ref=f6e49]:
+            - strong [ref=f6e51]: Categories
+            - list [ref=f6e53]:
+              - listitem [ref=f6e54]:
+                - link "Books" [ref=f6e55] [cursor=pointer]:
+                  - /url: /books
+              - listitem [ref=f6e56]:
+                - link "Computers" [ref=f6e57] [cursor=pointer]:
+                  - /url: /computers
+              - listitem [ref=f6e58]:
+                - link "Electronics" [ref=f6e59] [cursor=pointer]:
+                  - /url: /electronics
+              - listitem [ref=f6e60]:
+                - link "Apparel & Shoes" [ref=f6e61] [cursor=pointer]:
+                  - /url: /apparel-shoes
+              - listitem [ref=f6e62]:
+                - link "Digital downloads" [ref=f6e63] [cursor=pointer]:
+                  - /url: /digital-downloads
+              - listitem [ref=f6e64]:
+                - link "Jewelry" [ref=f6e65] [cursor=pointer]:
+                  - /url: /jewelry
+              - listitem [ref=f6e66]:
+                - link "Gift Cards" [ref=f6e67] [cursor=pointer]:
+                  - /url: /gift-cards
+          - generic [ref=f6e68]:
+            - strong [ref=f6e70]: Manufacturers
+            - list [ref=f6e72]:
+              - listitem [ref=f6e73]:
+                - link "Tricentis" [ref=f6e74] [cursor=pointer]:
+                  - /url: /tricentis
+          - generic [ref=f6e75]:
+            - strong [ref=f6e77]: Newsletter
+            - generic [ref=f6e79]:
+              - text: "Sign up for our newsletter:"
+              - textbox [ref=f6e81]
+              - button "Subscribe" [ref=f6e83] [cursor=pointer]
+        - generic [ref=f6e84]:
+          - list [ref=f6e86]:
+            - listitem [ref=f6e87]:
+              - link "Home" [ref=f6e89] [cursor=pointer]:
+                - /url: /
+              - text: /
+            - listitem [ref=f6e90]:
+              - link "Books" [ref=f6e92] [cursor=pointer]:
+                - /url: /books
+              - text: /
+            - listitem [ref=f6e93]:
+              - strong [ref=f6e94]: Computing and Internet
+          - generic [ref=f6e98]:
+            - generic [ref=f6e99]:
+              - img "Picture of Computing and Internet" [ref=f6e102]
+              - generic [ref=f6e103]:
+                - heading "Computing and Internet" [level=1] [ref=f6e105]
+                - generic [ref=f6e106]: More Than 100 tips about computing and internet.
+                - generic [ref=f6e107]: "Availability: In stock"
+                - generic [ref=f6e108]: Free shipping
+                - generic [ref=f6e113]:
+                  - link "3125 review(s)" [ref=f6e114] [cursor=pointer]:
+                    - /url: /productreviews/13
+                  - text: "|"
+                  - link "Add your review" [ref=f6e115] [cursor=pointer]:
+                    - /url: /productreviews/13
+                - generic [ref=f6e116]:
+                  - generic [ref=f6e117]: "Old price: 30.00"
+                  - generic [ref=f6e118]: "Price: 10.00"
+                - generic [ref=f6e120]:
+                  - text: "Qty:"
+                  - textbox "Qty:" [ref=f6e121]: "1"
+                  - button "Add to cart" [active] [ref=f6e122] [cursor=pointer]
+                - button "Email a friend" [ref=f6e124] [cursor=pointer]
+                - button "Add to compare list" [ref=f6e126] [cursor=pointer]
+              - paragraph [ref=f6e128]: Get to know everything about computing and the internet.
+            - generic [ref=f6e129]:
+              - generic [ref=f6e130]:
+                - strong [ref=f6e132]: Product tags
+                - generic:
+                  - list:
+                    - listitem [ref=f6e133]:
+                      - link "nice" [ref=f6e134] [cursor=pointer]:
+                        - /url: /producttag/1/nice
+                      - text: (6)
+                    - listitem [ref=f6e135]: ","
+                    - listitem [ref=f6e136]:
+                      - link "awesome" [ref=f6e137] [cursor=pointer]:
+                        - /url: /producttag/8/awesome
+                      - text: (20)
+                    - listitem [ref=f6e138]: ","
+                    - listitem [ref=f6e139]:
+                      - link "book" [ref=f6e140] [cursor=pointer]:
+                        - /url: /producttag/10/book
+                      - text: (6)
+              - generic [ref=f6e141]:
+                - strong [ref=f6e143]: Customers who bought this item also bought
+                - generic [ref=f6e145]:
+                  - link [ref=f6e147] [cursor=pointer]:
+                    - /url: /simple-computer
+                    - img "Picture of Simple Computer" [ref=f6e148]
+                  - generic [ref=f6e149]:
+                    - heading [level=2] [ref=f6e150]:
+                      - link "Simple Computer" [ref=f6e151] [cursor=pointer]:
+                        - /url: /simple-computer
+                    - generic "417 review(s)" [ref=f6e152]
+                    - generic [ref=f6e155]:
+                      - generic [ref=f6e156]: "800.00"
+                      - button "Add to cart" [ref=f6e159] [cursor=pointer]
+                - generic [ref=f6e161]:
+                  - link [ref=f6e163] [cursor=pointer]:
+                    - /url: /build-your-own-expensive-computer-2
+                    - img "Picture of Build your own expensive computer" [ref=f6e164]
+                  - generic [ref=f6e165]:
+                    - heading [level=2] [ref=f6e166]:
+                      - link "Build your own expensive computer" [ref=f6e167] [cursor=pointer]:
+                        - /url: /build-your-own-expensive-computer-2
+                    - generic "529 review(s)" [ref=f6e168]
+                    - generic [ref=f6e171]:
+                      - generic [ref=f6e172]: "1800.00"
+                      - button "Add to cart" [ref=f6e175] [cursor=pointer]
+                - generic [ref=f6e177]:
+                  - link [ref=f6e179] [cursor=pointer]:
+                    - /url: /blue-jeans
+                    - img "Picture of Blue Jeans" [ref=f6e180]
+                  - generic [ref=f6e181]:
+                    - heading [level=2] [ref=f6e182]:
+                      - link "Blue Jeans" [ref=f6e183] [cursor=pointer]:
+                        - /url: /blue-jeans
+                    - generic "701 review(s)" [ref=f6e184]
+                    - generic [ref=f6e187]:
+                      - generic [ref=f6e188]: "1.00"
+                      - button "Add to cart" [ref=f6e191] [cursor=pointer]
+              - generic [ref=f6e192]:
+                - strong [ref=f6e194]: Related products
+                - generic [ref=f6e196]:
+                  - link [ref=f6e198] [cursor=pointer]:
+                    - /url: /health
+                    - img "Picture of Health Book" [ref=f6e199]
+                  - generic [ref=f6e200]:
+                    - heading [level=2] [ref=f6e201]:
+                      - link "Health Book" [ref=f6e202] [cursor=pointer]:
+                        - /url: /health
+                    - generic "587 review(s)" [ref=f6e203]
+                    - generic [ref=f6e206]:
+                      - generic [ref=f6e207]:
+                        - generic [ref=f6e208]: "27.00"
+                        - generic [ref=f6e209]: "10.00"
+                      - button "Add to cart" [ref=f6e211] [cursor=pointer]
+                - generic [ref=f6e213]:
+                  - link [ref=f6e215] [cursor=pointer]:
+                    - /url: /science
+                    - img "Picture of Science" [ref=f6e216]
+                  - generic [ref=f6e217]:
+                    - heading [level=2] [ref=f6e218]:
+                      - link "Science" [ref=f6e219] [cursor=pointer]:
+                        - /url: /science
+                    - generic "726 review(s)" [ref=f6e220]
+                    - generic [ref=f6e224]:
+                      - generic [ref=f6e225]: "67.00"
+                      - generic [ref=f6e226]: "51.00"
+                - generic [ref=f6e228]:
+                  - link [ref=f6e230] [cursor=pointer]:
+                    - /url: /fiction
+                    - img "Picture of Fiction" [ref=f6e231]
+                  - generic [ref=f6e232]:
+                    - heading [level=2] [ref=f6e233]:
+                      - link "Fiction" [ref=f6e234] [cursor=pointer]:
+                        - /url: /fiction
+                    - generic "791 review(s)" [ref=f6e235]
+                    - generic [ref=f6e238]:
+                      - generic [ref=f6e239]:
+                        - generic [ref=f6e240]: "35.00"
+                        - generic [ref=f6e241]: "24.00"
+                      - button "Add to cart" [ref=f6e243] [cursor=pointer]
+    - generic [ref=f6e244]:
+      - generic [ref=f6e245]:
+        - generic [ref=f6e246]:
+          - heading "Information" [level=3] [ref=f6e247]
+          - list [ref=f6e248]:
+            - listitem [ref=f6e249]:
+              - link "Sitemap" [ref=f6e250] [cursor=pointer]:
+                - /url: /sitemap
+            - listitem [ref=f6e251]:
+              - link "Shipping & Returns" [ref=f6e252] [cursor=pointer]:
+                - /url: /shipping-returns
+            - listitem [ref=f6e253]:
+              - link "Privacy Notice" [ref=f6e254] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f6e255]:
+              - link "Conditions of Use" [ref=f6e256] [cursor=pointer]:
+                - /url: /conditions-of-use
+            - listitem [ref=f6e257]:
+              - link "About us" [ref=f6e258] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=f6e259]:
+              - link "Contact us" [ref=f6e260] [cursor=pointer]:
+                - /url: /contactus
+        - generic [ref=f6e261]:
+          - heading "Customer service" [level=3] [ref=f6e262]
+          - list [ref=f6e263]:
+            - listitem [ref=f6e264]:
+              - link "Search" [ref=f6e265] [cursor=pointer]:
+                - /url: /search
+            - listitem [ref=f6e266]:
+              - link "News" [ref=f6e267] [cursor=pointer]:
+                - /url: /news
+            - listitem [ref=f6e268]:
+              - link "Blog" [ref=f6e269] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f6e270]:
+              - link "Recently viewed products" [ref=f6e271] [cursor=pointer]:
+                - /url: /recentlyviewedproducts
+            - listitem [ref=f6e272]:
+              - link "Compare products list" [ref=f6e273] [cursor=pointer]:
+                - /url: /compareproducts
+            - listitem [ref=f6e274]:
+              - link "New products" [ref=f6e275] [cursor=pointer]:
+                - /url: /newproducts
+        - generic [ref=f6e276]:
+          - heading "My account" [level=3] [ref=f6e277]
+          - list [ref=f6e278]:
+            - listitem [ref=f6e279]:
+              - link "My account" [ref=f6e280] [cursor=pointer]:
+                - /url: /customer/info
+            - listitem [ref=f6e281]:
+              - link "Orders" [ref=f6e282] [cursor=pointer]:
+                - /url: /customer/orders
+            - listitem [ref=f6e283]:
+              - link "Addresses" [ref=f6e284] [cursor=pointer]:
+                - /url: /customer/addresses
+            - listitem [ref=f6e285]:
+              - link "Shopping cart" [ref=f6e286] [cursor=pointer]:
+                - /url: /cart
+            - listitem [ref=f6e287]:
+              - link "Wishlist" [ref=f6e288] [cursor=pointer]:
+                - /url: /wishlist
+        - generic [ref=f6e289]:
+          - heading "Follow us" [level=3] [ref=f6e290]
+          - list [ref=f6e291]:
+            - listitem [ref=f6e292]:
+              - link "Facebook" [ref=f6e293] [cursor=pointer]:
+                - /url: http://www.facebook.com/nopCommerce
+            - listitem [ref=f6e294]:
+              - link "Twitter" [ref=f6e295] [cursor=pointer]:
+                - /url: https://twitter.com/nopCommerce
+            - listitem [ref=f6e296]:
+              - link "RSS" [ref=f6e297] [cursor=pointer]:
+                - /url: /news/rss/1
+            - listitem [ref=f6e298]:
+              - link "YouTube" [ref=f6e299] [cursor=pointer]:
+                - /url: http://www.youtube.com/user/nopCommerce
+            - listitem [ref=f6e300]:
+              - link "Google+" [ref=f6e301] [cursor=pointer]:
+                - /url: https://plus.google.com/+nopcommerce
+      - generic [ref=f6e302]:
+        - text: Powered by
+        - link "nopCommerce" [ref=f6e303] [cursor=pointer]:
+          - /url: http://www.nopcommerce.com/
+      - generic [ref=f6e304]: Copyright © 2026 Tricentis Demo Web Shop. All rights reserved.
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { RegisterCartPage } from '../pages/RegisterCartPage';
+  3  | import { LoginPage } from '../pages/LoginPage';
+  4  | 
+  5  | test('Register + Add Product to Cart', async ({ page }, testInfo) => {
+  6  |   const registerPage = new RegisterCartPage(page);
+  7  |   const loginPage = new LoginPage(page);
+  8  | 
+  9  |   const firstName = 'Test';
+  10 |   const lastName = 'User';
+  11 |   const email = `testuser${Date.now()}@example.com`;
+  12 |   const password = 'Test@12345';
+  13 | 
+  14 |   // 1. Register new customer
+  15 |   await registerPage.openRegisterPage();
+  16 | 
+  17 |   await registerPage.registerUser(
+  18 |     firstName,
+  19 |     lastName,
+  20 |     email,
+  21 |     password
+  22 |   );
+  23 | 
+  24 |   // Verify registration completed
+  25 |   await expect(page.locator('.result')).toContainText(
+  26 |     'Your registration completed'
+  27 |   );
+  28 | 
+  29 |   // 2. Logout after registration
+  30 |   await page.getByRole('link', { name: 'Log out' }).click();
+  31 | 
+  32 |   // 3. Login with newly created account
+  33 |   await loginPage.open();
+  34 | 
+  35 |   await loginPage.login(email, password);
+  36 | 
+  37 |   // Verify user is logged in
+  38 |   await expect(
+  39 |     page.getByRole('link', { name: 'Log out' })
+  40 |   ).toBeVisible();
+  41 | 
+  42 | 
+  43 | // 4. Navigate to Books category
+  44 | await page.getByRole('link', { name: 'Books' }).first().click();
+  45 |   // 5. Select the first product
+  46 |   const firstProduct = page.locator('.product-item').first();
+  47 | 
+  48 |   const productName = await firstProduct
+  49 |     .locator('.product-title')
+  50 |     .innerText();
+  51 | 
+  52 |   await firstProduct
+  53 |     .locator('.product-title a')
+  54 |     .click();
+  55 | 
+  56 |   // 6. Add product to cart
+  57 |   await page
+  58 |     .locator('input[value="Add to cart"]')
+  59 |     .first()
+  60 |     .click();
+  61 | 
+  62 |   // Wait for cart update
+  63 |   await page.waitForTimeout(1000);
+  64 | 
+  65 |   // 7. Open shopping cart
+> 66 |   await page.getByRole('link', { name: /Shopping cart/ }).click();
+     |                                                           ^ Error: locator.click: Error: strict mode violation: getByRole('link', { name: /Shopping cart/ }) resolved to 2 elements:
+  67 | 
+  68 |   // 8. Verify correct product appears in cart
+  69 |   const cartProduct = page.locator('.cart-item-row');
+  70 | 
+  71 |   await expect(cartProduct).toContainText(productName);
+  72 | 
+  73 |   // 9. Verify quantity is 1
+  74 |   const quantityInput = cartProduct.locator('.qty-input');
+  75 | 
+  76 |   await expect(quantityInput).toHaveValue('1');
+  77 | 
+  78 |   // 10. Attach screenshot to Playwright/Allure report
+  79 |   await testInfo.attach('cart-screenshot', {
+  80 |     body: await page.screenshot({ fullPage: true }),
+  81 |     contentType: 'image/png',
+  82 |   });
+  83 | });
+```

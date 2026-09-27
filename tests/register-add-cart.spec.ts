@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+
+// Q2: Register new customer and add product to cart
+// import { test, expect } from '@playwright/test';
 import { RegisterCartPage } from '../pages/RegisterCartPage';
 import { LoginPage } from '../pages/LoginPage';
 
